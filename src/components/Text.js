@@ -6,9 +6,7 @@ const Text = () => {
     message: { messageState, text },
     showMessage,
   } = useGlobalContext();
-  console.log("the message state is ", messageState);
-  console.log("the message text is ", messageState);
-  console.log("the showMessage  is ", showMessage);
+
   return (
     <section>
       <h1 className="title">Todo List</h1>
