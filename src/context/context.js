@@ -65,7 +65,7 @@ const AppContextProvider = (props) => {
     dispatch({ type: "END_EDITING" });
     dispatch({
       type: "SET_MESSAGE",
-      payload: { text: "task successfly edited", mesageState: "success" },
+      payload: { text: "task successfly edited", messageState: "success" },
     });
     dispatch({ type: "SHOW_MESSAGE" });
   };
