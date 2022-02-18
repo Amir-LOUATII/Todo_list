@@ -46,7 +46,7 @@ const AppContextProvider = (props) => {
 
   const setEditing = (id, value) => {
     dispatch({ type: "START_EDITING", payload: { id, value } });
-    console.log("runned");
+    window.scrollTo(0, 0);
   };
 
   const endEditing = () => {
