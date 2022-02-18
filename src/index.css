@@ -39,7 +39,6 @@ body {
   text-transform: capitalize;
 }
 .message.error {
-  color: hsl(360, 67%, 44%);
   background-color: hsl(360, 71%, 66%);
 }
 .message.success {
