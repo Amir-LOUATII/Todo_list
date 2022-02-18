@@ -47,7 +47,6 @@ const AppContextProvider = (props) => {
   }, []);
 
   useEffect(() => {
-    console.log("useffect runned ");
     let dispayMessage = setTimeout(() => {
       dispatch({ type: "HIDE_MESSAGE" });
     }, 2000);
