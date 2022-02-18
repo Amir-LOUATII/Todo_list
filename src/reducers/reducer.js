@@ -22,6 +22,18 @@ const reducer = (state, action) => {
       };
     case "END_EDITING":
       return { ...state, isEditing: false, editingId: "" };
+    case "SHOW_MESSAGE":
+      return { ...state, showMessage: true };
+    case "SET_MESSAGE":
+      return {
+        ...state,
+        message: {
+          text: action.payload.text,
+          messageState: action.payload.messageState,
+        },
+      };
+    case "HIDE_MESSAGE":
+      return { ...state, showMessage: false };
     default:
       throw new Error(`there is no such action ${action.type} please check`);
   }

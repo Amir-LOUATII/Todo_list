@@ -28,7 +28,25 @@ body {
     width: 95vw;
   }
 }
-
+/* start text component */
+.title {
+  font-size: 30px;
+  text-align: center;
+}
+.message {
+  font-size: 14px;
+  text-align: center;
+  text-transform: capitalize;
+}
+.message.error {
+  color: hsl(360, 67%, 44%);
+  background-color: hsl(360, 71%, 66%);
+}
+.message.success {
+  background-color: hsl(125, 71%, 66%);
+}
+/* end text component */
+/* start form */
 .form {
   display: flex;
   justify-content: center;
@@ -66,13 +84,15 @@ input:focus {
   font-size: 18px;
   cursor: pointer;
 }
-
+/* end from */
+/* start list */
 ul {
   list-style: none;
   margin: 0;
   padding: 0;
 }
-
+/* end list */
+/* start list item */
 article {
   padding: 0.5rem 1rem;
   display: flex;
@@ -89,6 +109,11 @@ article h3 {
   padding: 0;
 }
 
+@media (max-width: 575px) {
+  article h3 {
+    font-size: 14px;
+  }
+}
 .clear-btn {
   text-transform: capitalize;
   width: 10rem;
@@ -109,6 +134,7 @@ article h3 {
   border: none;
   background-color: transparent;
   cursor: pointer;
+  display: block;
 }
 
 .trash {
@@ -118,3 +144,10 @@ article h3 {
 .edit {
   color: hsl(125, 67%, 44%);
 }
+
+.icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* end list item */

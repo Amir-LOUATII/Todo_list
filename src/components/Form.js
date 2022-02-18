@@ -12,6 +12,7 @@ const Form = () => {
     editingId,
     endEditing,
     list,
+    setError,
   } = useGlobalContext();
   useEffect(() => {
     textInput.current.focus();
@@ -32,6 +33,8 @@ const Form = () => {
         if (!item) {
           const doc = { task: task, date: new Date().getTime() };
           addItem(doc);
+        } else {
+          setError("This task already exist");
         }
       } else {
         const item = list.find(
@@ -39,11 +42,13 @@ const Form = () => {
         );
         if (!item) {
           editItem(editingId, task);
+          endEditing();
         }
       }
+    } else {
+      setError("Please Enter a valid value");
     }
     clearInput();
-    endEditing();
   };
   return (
     <form onSubmit={submitHandler} className="form">

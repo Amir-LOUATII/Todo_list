@@ -11,6 +11,8 @@ const intialState = {
   isEditing: false,
   editingId: "",
   task: "",
+  showMessage: false,
+  message: { text: "", messageState: "error" },
 };
 const AppContextProvider = (props) => {
   const [state, dispatch] = useReducer(reducer, intialState);
@@ -44,6 +46,17 @@ const AppContextProvider = (props) => {
     return () => unsub();
   }, []);
 
+  useEffect(() => {
+    console.log("useffect runned ");
+    let dispayMessage = setTimeout(() => {
+      dispatch({ type: "HIDE_MESSAGE" });
+    }, 2000);
+
+    return () => {
+      clearTimeout(dispayMessage);
+    };
+  }, [state.message]);
+
   const setEditing = (id, value) => {
     dispatch({ type: "START_EDITING", payload: { id, value } });
     window.scrollTo(0, 0);
@@ -51,6 +64,11 @@ const AppContextProvider = (props) => {
 
   const endEditing = () => {
     dispatch({ type: "END_EDITING" });
+    dispatch({
+      type: "SET_MESSAGE",
+      payload: { text: "task successfly edited", mesageState: "success" },
+    });
+    dispatch({ type: "SHOW_MESSAGE" });
   };
   const clearInput = () => {
     dispatch({ type: "CLEAR_INPUT" });
@@ -71,10 +89,24 @@ const AppContextProvider = (props) => {
 
   const addItem = (task) => {
     db.collection("list").add(task);
+
+    dispatch({
+      type: "SET_MESSAGE",
+      payload: { text: "task successfly added", messageState: "success" },
+    });
+    dispatch({ type: "SHOW_MESSAGE" });
   };
 
   const editItem = (id, value) => {
     db.collection("list").doc(id).update({ task: value });
+  };
+
+  const setError = (text) => {
+    dispatch({
+      type: "SET_MESSAGE",
+      payload: { text: text, messageState: "error" },
+    });
+    dispatch({ type: "SHOW_MESSAGE" });
   };
   return (
     <appContext.Provider
@@ -88,6 +120,7 @@ const AppContextProvider = (props) => {
         setEditing,
         editItem,
         endEditing,
+        setError,
       }}
     >
       {props.children}
