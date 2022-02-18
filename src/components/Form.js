@@ -37,9 +37,7 @@ const Form = () => {
           setError("This task already exist");
         }
       } else {
-        const item = list.find(
-          (item) => item.task.toLowerCase() === task.toLowerCase()
-        );
+        const item = list.find((item) => item.task === task);
         if (!item) {
           editItem(editingId, task);
           endEditing();
