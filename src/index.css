@@ -1,13 +1,120 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #f1f5f8;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.section-center {
+  width: 90vw;
+  margin: 0 auto;
+  max-width: 35rem;
+  margin-top: 8rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  background-color: white;
+  border-radius: 5px;
+  padding: 1.5rem 1rem;
+}
+@media screen and (min-width: 992px) {
+  .section-center {
+    width: 95vw;
+  }
+}
+
+.form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.form input {
+  width: 80%;
+  min-width: 200px;
+  height: 40px;
+  border: none;
+  background-color: #f1f5f8;
+  padding: 0.25rem 1.5rem;
+  caret-color: rgb(165 213 248);
+  font-size: 20px;
+}
+
+input:focus {
+  outline: none;
+}
+
+.btn {
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  border: none;
+  width: 70px;
+  background-color: rgb(165 213 248);
+  padding: 0.25rem 1rem;
+  color: white;
+  font-weight: 600;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+article {
+  padding: 0.5rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f1f5f8;
+  margin: 10px 0;
+  text-transform: capitalize;
+  border-radius: 5px;
+}
+
+article h3 {
+  margin: 0;
+  padding: 0;
+}
+
+.clear-btn {
+  text-transform: capitalize;
+  width: 10rem;
+  height: 1.5rem;
+  display: grid;
+  align-items: center;
+  background: transparent;
+  border-color: transparent;
+  color: hsl(360, 67%, 44%);
+  margin: 0 auto;
+  font-size: 1.25rem;
+
+  cursor: pointer;
+  margin-top: 1.25rem;
+}
+
+.btn-icon {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.trash {
+  color: hsl(360, 67%, 44%);
+}
+
+.edit {
+  color: hsl(125, 67%, 44%);
 }
