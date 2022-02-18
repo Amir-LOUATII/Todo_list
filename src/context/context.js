@@ -34,6 +34,7 @@ const AppContextProvider = (props) => {
               result.push({ id: doc.id, ...doc.data() });
             });
             dispatch({ type: "GET_DATA", payload: result });
+            dispatch({ type: "END_LOADING" });
           }
         },
         (err) => {
