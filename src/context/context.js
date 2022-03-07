@@ -76,6 +76,9 @@ const AppContextProvider = (props) => {
     db.collection("list").doc(id).delete();
   };
 
+  const updateItem = (id, update) => {
+    db.collection("list").doc(id).update(update);
+  };
   const clearList = () => {
     db.collection("list")
       .get()
@@ -120,6 +123,7 @@ const AppContextProvider = (props) => {
         editItem,
         endEditing,
         setError,
+        updateItem,
       }}
     >
       {props.children}

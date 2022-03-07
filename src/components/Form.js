@@ -31,7 +31,11 @@ const Form = () => {
           (item) => item.task.toLowerCase() === task.toLowerCase()
         );
         if (!item) {
-          const doc = { task: task, date: new Date().getTime() };
+          const doc = {
+            task: task,
+            date: new Date().getTime(),
+            checked: false,
+          };
           addItem(doc);
         } else {
           setError("This task already exist");

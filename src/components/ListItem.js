@@ -6,16 +6,22 @@ import { FiCheckSquare } from "react-icons/fi";
 
 import { useGlobalContext } from "../context/context";
 
-const ListItem = ({ task, id }) => {
-  const { deleteItem, setEditing } = useGlobalContext();
-  const [checked, setChecked] = useState(false);
+const ListItem = ({ task, id, checked }) => {
+  const { deleteItem, setEditing, updateItem } = useGlobalContext();
   return (
     <article>
       <div className="text">
         <h3>{task}</h3>
       </div>
       <div className="icons">
-        <button className="btn-icon" onClick={() => setChecked(!checked)}>
+        <button
+          className="btn-icon"
+          onClick={() => {
+            checked
+              ? updateItem(id, { checked: false })
+              : updateItem(id, { checked: true });
+          }}
+        >
           {!checked ? (
             <MdOutlineCheckBoxOutlineBlank className="check" />
           ) : (
