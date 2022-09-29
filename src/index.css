@@ -50,11 +50,11 @@ body {
 }
 
 .message.error {
-  background-color: hsl(360, 71%, 66%);
+  color: hsl(360, 71%, 66%);
 }
 
 .message.success {
-  background-color: hsl(125, 71%, 66%);
+  color: hsl(125, 71%, 66%);
 }
 
 /* end text component */
@@ -75,6 +75,7 @@ body {
   padding: 0.25rem 1.5rem;
   caret-color: rgb(165 213 248);
   font-size: 20px;
+  color: white;
 }
 
 input:focus {
