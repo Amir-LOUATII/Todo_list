@@ -54,6 +54,7 @@ const Form = () => {
   };
   return (
     <form onSubmit={submitHandler} className="form">
+      <h1>{process.env.TEST}</h1>
       <input
         type="text"
         value={task}
