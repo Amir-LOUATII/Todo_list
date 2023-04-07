@@ -52,9 +52,10 @@ const Form = () => {
     }
     clearInput();
   };
+
   return (
     <form onSubmit={submitHandler} className="form">
-      <h1>{process.env.TEST}</h1>
+      <h1>process.env.REACT_APP_TEST</h1>
       <input
         type="text"
         value={task}
