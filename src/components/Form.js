@@ -52,6 +52,7 @@ const Form = () => {
     }
     clearInput();
   };
+  console.log(process.env.REACT_APP_TEST);
   return (
     <form onSubmit={submitHandler} className="form">
       <input
